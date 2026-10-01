@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175'] }));
+app.use(cors({ origin: '*' })); // Allow requests from any frontend domain (Netlify)
 
 // Health Check
 app.get('/api/health', (req, res) => {
