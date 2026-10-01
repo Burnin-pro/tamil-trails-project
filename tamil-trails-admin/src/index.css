@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent-gold: #E8B84B;
+  --color-accent-teal: #0E5C63;
+  --color-danger: #E14B4B;
+  --color-success: #4BAE6E;
+  --color-bg-admin: #0A0F1D;
+  --color-surface: rgba(255,255,255,0.04);
+  --color-surface-border: rgba(255,255,255,0.08);
+  --font-heading: 'Clash Display', 'Fraunces', serif;
+  --font-body: 'Satoshi', 'Manrope', system-ui, sans-serif;
+  --radius-card: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg-admin);
+  color: white;
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    border: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    border-radius: 28px;
+  }
+  .animate-shake {
+    animation: shake 0.2s ease-in-out;
+  }
+  .animate-text-shine {
+    animation: text-shine 4s linear infinite;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes text-shine {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
